@@ -15,16 +15,20 @@ public class Colony {
 
     public void timeStep(){
 
-        for (int i =0; i < MOVES_TO_MAKE; i++){
+//        for (int i =0; i < MOVES_TO_MAKE; i++){
+        while (true){
 
+            System.out.println("");
             for (int j=0; j < colony.size(); j++){
-
                 Ant oneAnt = colony.get(j);
 
+                oneAnt.checkSpecialAction();
                 if(!(oneAnt instanceof Queen)){
                     oneAnt.moveAnt();
                 }
+
             }
+
 
 
         }

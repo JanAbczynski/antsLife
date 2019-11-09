@@ -4,6 +4,11 @@ public class Soldier extends Ant {
 
     private String lastDirection = "N";
 
+    @Override
+    public void checkSpecialAction(){
+
+    }
+
 
     @Override
     public void selectDirection () {

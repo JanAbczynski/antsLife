@@ -9,6 +9,8 @@ public abstract class Ant {
     protected String moveDirection;
     private static int gridSizeX = 100;
     private static int gridSizeY = 100;
+    static boolean queensGoodMood = false;
+    protected int stepDistance = 1;
 
     public Ant(){
         testField = 3;
@@ -36,37 +38,42 @@ public abstract class Ant {
         changePosition();
 
 
+
 //        System.out.println(getClass().getSimpleName());
     }
 
     public void selectDirection(){
-        System.out.println("org");
+//        System.out.println("org");
         moveDirection = "E";
     }
 
     public void selectStepDistance(){
+        stepDistance = 1;
     }
 
     public void changePosition(){
         switch (moveDirection){
             case "N":
-                System.out.println("n");
-                positionY ++;
+//                System.out.println("n");
+                positionY += stepDistance;
                 break;
             case "S":
-                System.out.println("s");
-                positionY --;
+//                System.out.println("s");
+                positionY -= stepDistance;
                 break;
             case "E":
-                System.out.println("e");
-                positionX --;
+//                System.out.println("e");
+                positionX -= stepDistance;
                 break;
             case "W":
-                System.out.println("w");
-                positionX ++;
+//                System.out.println("w");
+                positionX += stepDistance;
                 break;
         }
     }
+
+
+    public abstract void checkSpecialAction();
 
 
 
