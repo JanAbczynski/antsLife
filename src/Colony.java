@@ -13,6 +13,7 @@ public class Colony {
         colony.add(ant);
     }
 
+
     public void timeStep(){
 
         for (int i =0; i < MOVES_TO_MAKE; i++){
