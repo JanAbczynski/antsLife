@@ -10,7 +10,6 @@ public class Soldier extends Ant {
         if(moveDirection == null){
             moveDirection = "N";
         }
-
         if (moveDirection.equals("N")) {
             moveDirection = "E";
         } else if (moveDirection.equals("S")) {
