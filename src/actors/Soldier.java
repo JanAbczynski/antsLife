@@ -7,14 +7,15 @@ public class Soldier extends Ant {
 
     @Override
     public void selectDirection () {
-        if (lastDirection.equals("N")) {
-            lastDirection = "E";
+        if(moveDirection == null){
+            moveDirection = "N";
+        }
+
+        if (moveDirection.equals("N")) {
             moveDirection = "E";
-        } else if (lastDirection.equals("S")) {
-            lastDirection = "W";
+        } else if (moveDirection.equals("S")) {
             moveDirection = "W";
-        } else if (lastDirection.equals("W")) {
-            lastDirection = "N";
+        } else if (moveDirection.equals("W")) {
             moveDirection = "N";
         } else {
             moveDirection = "S";
