@@ -36,4 +36,13 @@ public class Worker extends Ant {
         }
     }
 
+    @Override
+    public void selectStepDistance(boolean thereIsWasp) {
+        stepDistance = 1;
+        if (thereIsWasp) {
+            stepDistance = 0;
+        }
+
+    }
+
 }

@@ -4,6 +4,7 @@ public class Wasp extends Ant{
 
     public Wasp(){
         setAntSymbol("X");
+        stepDistance = 0;
     }
 
     @Override
@@ -12,7 +13,7 @@ public class Wasp extends Ant{
     }
 
     @Override
-    public void selectStepDistance(){
+    public void selectStepDistance(boolean thereIsWasp){
         stepDistance = 0;
 
     }

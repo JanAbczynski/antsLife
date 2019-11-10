@@ -64,10 +64,12 @@ public class Drone extends Ant {
     }
 
     @Override
-    public void selectStepDistance(){
+    public void selectStepDistance(boolean thereIsWasp){
         stepDistance = nextMoveSteps;
         nextMoveSteps = 1;
-        if ()
+        if (thereIsWasp){
+            stepDistance = 0;
+        }
 
     }
 

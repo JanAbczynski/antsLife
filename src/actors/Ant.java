@@ -8,7 +8,7 @@ public abstract class Ant {
     protected int testField;
     protected String moveDirection;
     private static int gridSizeX = 40;
-    private static int gridSizeY = 40;
+    private static int gridSizeY = 140;
     protected static int gridCenterX = gridSizeX / 2;
     protected static int gridCenterY = gridSizeY / 2;
     static boolean queensGoodMood = false;

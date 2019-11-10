@@ -6,9 +6,9 @@ import actors.Worker;
 public class Main {
 
     private static int NUMBER_OF_QUEENS = 1;
-    private static int NUMBER_OF_SOLDIERS = 4;
-    private static int NUMBER_OF_WORKERS = 4;
-    private static int NUMBER_OF_DRONES = 4;
+    private static int NUMBER_OF_SOLDIERS = 0;
+    private static int NUMBER_OF_WORKERS = 0;
+    private static int NUMBER_OF_DRONES = 1;
 
 
     public static void main(String[] args) {

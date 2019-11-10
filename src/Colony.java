@@ -48,7 +48,7 @@ public class Colony {
     }
 
 
-    private void checkWasp(){
+    private void generateWasp(){
         Random random = new Random();
         int waspFactor = random.nextInt(100);
         if (waspFactor > chanceForWasp){
@@ -81,7 +81,7 @@ public class Colony {
         while (true){
             fillUpNest();
             printNest();
-            thereIsWasp = false;
+//            thereIsWasp = false;
 
             System.out.println("");
             for (int j=0; j < colony.size(); j++){
@@ -91,13 +91,26 @@ public class Colony {
                 if(!(oneAnt instanceof Queen)){
                     oneAnt.moveAnt(thereIsWasp);
                 }
-                if(oneAnt instanceof Wasp){
-                    thereIsWasp = true;
-                }
+
+
             }
+            checkIsWaspInNest();
+
             if(!thereIsWasp){
-                checkWasp();
+                generateWasp();
             }
+        }
+    }
+
+    private void checkIsWaspInNest(){
+
+        thereIsWasp = false;
+        for (int j=0; j < colony.size(); j++){
+            Ant oneAnt = colony.get(j);
+            if(oneAnt instanceof Wasp){
+                thereIsWasp = true;
+            }
+
         }
     }
 
