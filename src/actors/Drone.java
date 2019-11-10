@@ -67,6 +67,7 @@ public class Drone extends Ant {
     public void selectStepDistance(){
         stepDistance = nextMoveSteps;
         nextMoveSteps = 1;
+        if ()
 
     }
 

@@ -1,7 +1,9 @@
 import actors.Ant;
 import actors.Queen;
+import actors.Wasp;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Colony {
 
@@ -10,6 +12,8 @@ public class Colony {
     private static int gridSizeX;
     private static int gridSizeY;
     private String antNest[][];
+    private static int chanceForWasp = 10;
+    private static boolean thereIsWasp = false;
 
 
     void addAnt(Ant ant){
@@ -43,6 +47,18 @@ public class Colony {
         return " ";
     }
 
+
+    private void checkWasp(){
+        Random random = new Random();
+        int waspFactor = random.nextInt(100);
+        if (waspFactor > chanceForWasp){
+            addAnt(new Wasp());
+
+        }
+    }
+
+
+
     private void printNest(){
         for (int x = 0; x < gridSizeX; x++){
 //            System.out.println(java.util.Arrays.toString(antNest[x]));
@@ -65,6 +81,7 @@ public class Colony {
         while (true){
             fillUpNest();
             printNest();
+            thereIsWasp = false;
 
             System.out.println("");
             for (int j=0; j < colony.size(); j++){
@@ -72,8 +89,14 @@ public class Colony {
 
                 oneAnt.checkSpecialAction();
                 if(!(oneAnt instanceof Queen)){
-                    oneAnt.moveAnt();
+                    oneAnt.moveAnt(thereIsWasp);
                 }
+                if(oneAnt instanceof Wasp){
+                    thereIsWasp = true;
+                }
+            }
+            if(!thereIsWasp){
+                checkWasp();
             }
         }
     }

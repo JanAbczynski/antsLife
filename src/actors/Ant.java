@@ -61,9 +61,9 @@ public abstract class Ant {
 
 //    public abstract void moveAnt();
 
-    public void moveAnt(){
+    public void moveAnt(boolean thereIsWasp){
         selectDirection();
-        selectStepDistance();
+        selectStepDistance(thereIsWasp);
         changePosition();
 
 
@@ -76,7 +76,7 @@ public abstract class Ant {
         moveDirection = "E";
     }
 
-    public void selectStepDistance(){
+    public void selectStepDistance(boolean thereIsWasp){
         stepDistance = 1;
     }
 
