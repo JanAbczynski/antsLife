@@ -4,6 +4,10 @@ public class Soldier extends Ant {
 
     private String lastDirection = "N";
 
+    public Soldier(){
+        setAntSymbol("S");
+    }
+
     @Override
     public void checkSpecialAction(){
 

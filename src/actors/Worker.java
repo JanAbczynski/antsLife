@@ -4,6 +4,10 @@ import java.util.Random;
 
 public class Worker extends Ant {
 
+    public Worker(){
+        setAntSymbol("W");
+    }
+
     @Override
     public void checkSpecialAction(){
 

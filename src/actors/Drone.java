@@ -11,6 +11,7 @@ public class Drone extends Ant {
 
 
     public Drone(){
+        setAntSymbol("D");
     }
 
 //    @Override
@@ -25,7 +26,9 @@ public class Drone extends Ant {
     }
 
     private void dateWithQueen(){
-        if ((positionX < 3 && positionX > -3) && (positionY < 3 && positionY > -3) && runAction){
+        if ((positionX < gridCenterX + 3 && positionX > gridCenterX - 3)
+                && (positionY < gridCenterY + 3 && positionY > gridCenterY - 3)
+                && runAction){
 
 //            action
             if (queensGoodMood){
@@ -69,11 +72,11 @@ public class Drone extends Ant {
 
 @Override
     public void selectDirection (){
-        if (positionX > 0){
+        if (positionX > gridCenterX){
             moveDirection = "E";
-        } else if (positionX < 0){
+        } else if (positionX < gridCenterX){
             moveDirection = "W";
-        }else if (positionY < 0){
+        }else if (positionY < gridCenterY){
             moveDirection = "N";
         }else{
             moveDirection = "S";

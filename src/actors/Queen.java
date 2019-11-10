@@ -7,8 +7,9 @@ public class Queen extends Ant {
     static int chanceForGoogMod = 30;
 
     public Queen(int posX, int posY) {
-        positionX = 0;
-        positionY = 0;
+        positionX = gridCenterX;
+        positionY = gridCenterY;
+        setAntSymbol("Q");
     }
 
     @Override
