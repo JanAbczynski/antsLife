@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class Worker extends Ant {
 
-    public Worker(){
+    public Worker(int XSize, int YSize){
+        super(XSize, YSize);
         setAntSymbol("W");
     }
 

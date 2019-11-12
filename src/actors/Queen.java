@@ -6,7 +6,9 @@ public class Queen extends Ant {
 //    boolean queensGoodMood = false;
     static int chanceForGoogMod = 30;
 
-    public Queen(int posX, int posY) {
+    public Queen(int XSize, int YSize, int posX, int posY) {
+        super(XSize, YSize);
+
         positionX = gridCenterX;
         positionY = gridCenterY;
         setAntSymbol("Q");

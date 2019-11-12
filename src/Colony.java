@@ -8,22 +8,19 @@ import java.util.Random;
 public class Colony {
 
     private ArrayList<Ant> colony = new ArrayList<>();
-    private static int MOVES_TO_MAKE = 100;
-    private static int gridSizeX;
-    private static int gridSizeY;
+    private int gridSizeX;
+    private int gridSizeY;
     private String antNest[][];
     private static int chanceForWasp = 10;
     private static boolean thereIsWasp = false;
 
 
+
     void addAnt(Ant ant){
         colony.add(ant);
-
     }
 
     void prepareNest (){
-        gridSizeY = Ant.getGridSizeY();
-        gridSizeX = Ant.getGridSizeX();
         antNest = new String [gridSizeX][gridSizeY];
     }
 
@@ -52,12 +49,10 @@ public class Colony {
         Random random = new Random();
         int waspFactor = random.nextInt(100);
         if (waspFactor > chanceForWasp){
-            addAnt(new Wasp());
+            addAnt(new Wasp(gridSizeX, gridSizeY));
 
         }
     }
-
-
 
     private void printNest(){
         for (int x = 0; x < gridSizeX; x++){
@@ -71,7 +66,6 @@ public class Colony {
 
             }
         }
-
 
     void timeStep(){
 
@@ -97,7 +91,7 @@ public class Colony {
             checkIsWaspInNest();
 
             if(!thereIsWasp){
-                generateWasp();
+//                generateWasp();
             }
         }
     }

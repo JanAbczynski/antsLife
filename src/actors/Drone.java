@@ -10,7 +10,8 @@ public class Drone extends Ant {
     private int nextMoveSteps = 1;
 
 
-    public Drone(){
+    public Drone(int XSize, int YSize){
+        super(XSize, YSize);
         setAntSymbol("D");
     }
 

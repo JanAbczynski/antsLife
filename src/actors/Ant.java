@@ -7,13 +7,24 @@ public abstract class Ant {
     protected int positionY;
     protected int testField;
     protected String moveDirection;
-    private static int gridSizeX = 40;
-    private static int gridSizeY = 140;
-    protected static int gridCenterX = gridSizeX / 2;
-    protected static int gridCenterY = gridSizeY / 2;
+    protected int gridSizeX;
+    protected int gridSizeY;
+    protected int gridCenterX = gridSizeX / 2;
+    protected int gridCenterY = gridSizeY / 2;
     static boolean queensGoodMood = false;
     protected int stepDistance = 1;
     protected String antSymbol;
+
+
+    public Ant(int XSize, int YSize){
+
+        this.gridSizeX = XSize;
+        this.gridSizeY = YSize;
+
+        Random random = new Random();
+        setPositionX(random.nextInt(gridSizeX));
+        setPositionY(random.nextInt(gridSizeY));
+    }
 
     public void setAntSymbol(String antSymbol) {
         this.antSymbol = antSymbol;
@@ -31,23 +42,7 @@ public abstract class Ant {
         return positionY;
     }
 
-    public static int getGridSizeX() {
-        return gridSizeX;
-    }
 
-    public static int getGridSizeY() {
-        return gridSizeY;
-    }
-
-    public Ant(){
-        testField = 3;
-
-        Random random = new Random();
-        setPositionX(random.nextInt(gridSizeX));
-        setPositionY(random.nextInt(gridSizeY));
-//        setPositionX(random.nextInt(gridSizeX) - gridSizeX / 2);
-//        setPositionY(random.nextInt(gridSizeY) - gridSizeY / 2);
-    }
 
 
     public void setPositionX(int positionX) {

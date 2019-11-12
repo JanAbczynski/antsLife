@@ -4,9 +4,12 @@ public class Soldier extends Ant {
 
     private String lastDirection = "N";
 
-    public Soldier(){
+    public Soldier(int XSize, int YSize){
+        super(XSize, YSize);
         setAntSymbol("S");
     }
+
+
 
     @Override
     public void checkSpecialAction(){

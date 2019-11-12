@@ -2,7 +2,8 @@ package actors;
 
 public class Wasp extends Ant{
 
-    public Wasp(){
+    public Wasp(int XSize, int YSize){
+        super(XSize, YSize);
         setAntSymbol("X");
         stepDistance = 0;
     }
