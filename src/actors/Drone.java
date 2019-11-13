@@ -10,8 +10,9 @@ public class Drone extends Ant {
     private int nextMoveSteps = 1;
 
 
-    public Drone(int XSize, int YSize){
+    public Drone(int XSize, int YSize) {
         super(XSize, YSize);
+        // todo don't use plain Strings here. Maybe a constant?
         setAntSymbol("D");
     }
 
@@ -21,18 +22,22 @@ public class Drone extends Ant {
 //    }
 
     @Override
-    public void checkSpecialAction(){
+    public void checkSpecialAction() {
 
         dateWithQueen();
     }
 
-    private void dateWithQueen(){
+    private void dateWithQueen() {
+        // fixme every iffable situation here could be a separate method
+        // fixme if you divide this big if at the beginning and use runAction separetaly,
+        //  it can simplify your code
+        // nit magic number -> what is "3"?
         if ((positionX < gridCenterX + 3 && positionX > gridCenterX - 3)
                 && (positionY < gridCenterY + 3 && positionY > gridCenterY - 3)
-                && runAction){
+                && runAction) {
 
 //            action
-            if (queensGoodMood){
+            if (queensGoodMood) {
                 pauseMove = 10;
                 onDate = true;
                 runAction = false;
@@ -46,12 +51,12 @@ public class Drone extends Ant {
             }
 
 //            action in progress
-        } else if (!runAction && pauseMove > 0){
+        } else if (!runAction && pauseMove > 0) {
             System.out.println("action in progress");
-            pauseMove --;
+            pauseMove--;
 
 //            after action
-        } else if (!runAction && pauseMove == 0){
+        } else if (!runAction && pauseMove == 0) {
             System.out.println("after action");
             runAction = true;
             onDate = false;
@@ -61,30 +66,30 @@ public class Drone extends Ant {
         }
 
 
-
     }
 
     @Override
-    public void selectStepDistance(boolean thereIsWasp){
+    public void selectStepDistance(boolean thereIsWasp) {
         stepDistance = nextMoveSteps;
         nextMoveSteps = 1;
-        if (thereIsWasp){
+        if (thereIsWasp) {
             stepDistance = 0;
         }
 
     }
 
-@Override
-    public void selectDirection (){
-        if (positionX > gridCenterX){
+    @Override
+//todo don't use plain Strings here. Maybe some structure that behaves like a constant?
+    public void selectDirection() {
+        if (positionX > gridCenterX) {
             moveDirection = "E";
-        } else if (positionX < gridCenterX){
+        } else if (positionX < gridCenterX) {
             moveDirection = "W";
-        }else if (positionY < gridCenterY){
+        } else if (positionY < gridCenterY) {
             moveDirection = "N";
-        }else{
+        } else {
             moveDirection = "S";
         }
-}
+    }
 
 }

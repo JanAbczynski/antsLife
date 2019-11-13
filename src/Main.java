@@ -5,6 +5,8 @@ public class Main {
     private static int NUMBER_OF_WORKERS = 0;
     private static int NUMBER_OF_DRONES = 1;
 
+    // todo before commiting changes, run a quick code reformat (default: ctrl + alt + l)
+    //  and import cleanup (default: ctrl + alt + o)
 
     public static void main(String[] args) {
 
